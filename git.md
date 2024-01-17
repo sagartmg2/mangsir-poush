@@ -8,6 +8,8 @@ initial project setup
 
 
 <!-- day to day  -->
-1. git status
+1. git status // optional 
 2. add 
     > git add . 
+3. git commit -m "variables"
+4. git push
