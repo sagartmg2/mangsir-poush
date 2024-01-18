@@ -13,3 +13,8 @@ initial project setup
     > git add . 
 3. git commit -m "variables"
 4. git push
+
+<!-- to pull -->
+1. git fetch // optional // to sync changes 
+2. git restore .  // to revert back changes to previous commit history
+3. git pull  // to pull actual codes.
