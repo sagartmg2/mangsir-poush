@@ -192,6 +192,8 @@ let todos = [
   },
 ];
 
+/* solutions.. */
+
 /* use template literal / string literal */
 /* 
     varaible is complted
