@@ -53,11 +53,13 @@ let services = [
 
 console.log("one" == "one");
 console.log("Two" == "one");
-console.log("Two" == "two");
+console.log("Two" == "two"); // false
 console.log("Two" == "Two");
-console.log(" Two" == "Two");
+console.log(" Two" == "Two"); // false
 console.log(10 >= 10); 
 console.log(10 <= 10); 
+console.log(5 < 5); // false 
+console.log(5 <= 5); // true
 
 
 /* 

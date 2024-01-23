@@ -1,60 +1,70 @@
-/*
+/* if else  
 
-conditional statements 
-if else
-
-    if(<conidtion>){
-        // do somehting for that true condition
-    }else{
-        // do something else
-    }
-
+    nested conditions
+    nested if else
 */
 
-let isCold = false;
+let willRain = true;
+let hasProbablity = false;
+let isCold = true
 
-if (isCold) {
-  console.log("take jacket");
+if (willRain) {
+  console.log("take umbrealla");
 } else {
-  console.log("no need.");
+  if (hasProbablity) {
+    console.log("you might need it. ");
+  } else {
+    console.log("no need");
+  }
 }
 
-let number1 = 100;
-let number2 = 2;
-
-if (number1 < number2) {
-    console.log("num1 is less than num2");
+if(willRain){
+  console.log("take umbrealla");
+}else if( hasProbablity){
+    console.log("you might need it. ");
 }else{
-    console.log("num1 is not less than num2");
-}
-console.log("Two" == "Two");
-
-let employee1 = {
-    name:"ram",
-    role:"reception"
-}
-let employee2 = {
-    name:"hari",
-    role:"reception"
-}
-let employee3 = {
-    name:"sita",
-    role:"manager"
+    console.log("no need. ");
 }
 
-let allowedRole = "manager"
+let student = {
+  name: "ram",
+  paidStatus: false,
+  hasScholorship: false,
+};
 
-/* ram cannot access vault */
-/* hari cannot access vault */
-/* sita can access vault */
+/* if not paid, ram canot give exam */
+/* if not paid but has scholorship, ram can give exam */
+
+if(student.paidStatus){
+    console.log("he can enroll");
+}else{
+    if(student.hasScholorship){
+        console.log("he can enroll");
+    }else{
+        console.log("he can't");
+    }
+
+}
+
+function getMonth(){
+    /* code here */
+  return  "feb" // change this. 
+}
+
+console.log(getMonth(1)); // jan
+console.log(getMonth(12)); // dec
+console.log(getMonth(0)); // invalid  input between 1-12
+console.log(getMonth(13)); // invalid input between 1-12
 
 
+console.log(getMonth("other-data")); // invalid  type:number
+console.log(getMonth(null)); // invalid  type:number
 
 
+console.log(typeof(12));
+console.log(typeof(-1));
+console.log(typeof(null));
+console.log(typeof([]));
+console.log(typeof(undefined));
 
-
-
-let services = [
-  { index: 0, img: "servic1.png", title: "service1" },
-  { index: 1, img: "servic2.png", title: "service2" },
-];
+// switch 
