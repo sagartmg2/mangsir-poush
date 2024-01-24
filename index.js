@@ -1,70 +1,110 @@
-/* if else  
+function getMonthName(monthNumber) {
+  let output = null;
 
-    nested conditions
-    nested if else
-*/
-
-let willRain = true;
-let hasProbablity = false;
-let isCold = true
-
-if (willRain) {
-  console.log("take umbrealla");
-} else {
-  if (hasProbablity) {
-    console.log("you might need it. ");
+  if (typeof monthNumber == "number") {
+    if (monthNumber <= 0 || monthNumber >= 13) {
+      output = "invaid type between 1-12";
+    } else {
+      if (monthNumber == 1) {
+        output = "jan";
+      } else if (monthNumber == 2) {
+        output = "feb";
+      } else if (monthNumber == 3) {
+        output = "mar";
+      } else if (monthNumber == 4) {
+        output = "apr...";
+      }
+    }
   } else {
-    console.log("no need");
+    output = "invalid  data-type, type number only";
+  }
+
+  return output;
+}
+
+console.log(getMonthName(3));
+console.log(getMonthName(0));
+console.log(getMonthName("hello"));
+console.log(getMonthName());
+
+/* <1 ,>=13 type between 1 -12 */
+/* other than  number  please type valid input  */
+
+let todos = [
+  {
+    title: "html",
+    status: true,
+  },
+  {
+    title: "js",
+    status: false,
+  },
+  {
+    title: "react",
+    status: false,
+  },
+  {
+    title: "mongob",
+    status: false,
+  },
+  {
+    title: "express",
+    status: false,
+  },
+];
+
+/* html is complted */
+/* js is pending */
+/* react is pending */
+
+// if (todos[0].status) {
+//   console.log(`${todos[0].title} is complted`);
+// } else {
+//   console.log(`${todos[0].title} is pending`);
+// }
+
+// if (todos[0].status) {
+//   console.log(`${todos[0].title} is complted`);
+// } else {
+//   console.log(`${todos[0].title} is pending`);
+// }
+
+function checkStatus(index) {
+  if (todos[index].status) {
+    console.log(`${todos[index].title} is complted`);
+  } else {
+    console.log(`${todos[index].title} is pending`);
+  }
+  return undefined;
+}
+console.log(checkStatus(0));
+checkStatus(1);
+checkStatus(2);
+
+function checkTodoStatus(index) {
+  if (todos[index].status) {
+    return `${todos[index].title} is complted`;
+  } else {
+    return `${todos[index].title} is pending`;
   }
 }
 
-if(willRain){
-  console.log("take umbrealla");
-}else if( hasProbablity){
-    console.log("you might need it. ");
-}else{
-    console.log("no need. ");
-}
+console.log(checkTodoStatus(1));
+console.log(checkTodoStatus(2));
+console.log(checkTodoStatus(0));
+console.log(checkTodoStatus(3));
+console.log(checkTodoStatus(4));
 
-let student = {
-  name: "ram",
-  paidStatus: false,
-  hasScholorship: false,
-};
+console.log(todos.length);
 
-/* if not paid, ram canot give exam */
-/* if not paid but has scholorship, ram can give exam */
-
-if(student.paidStatus){
-    console.log("he can enroll");
-}else{
-    if(student.hasScholorship){
-        console.log("he can enroll");
-    }else{
-        console.log("he can't");
+/* 
+    for( initalPoint ; condition ; mutator ){
+        // do something
     }
+*/
 
+for (let index = 0; index < 5; index++) {
+  console.log(index);
 }
 
-function getMonth(){
-    /* code here */
-  return  "feb" // change this. 
-}
-
-console.log(getMonth(1)); // jan
-console.log(getMonth(12)); // dec
-console.log(getMonth(0)); // invalid  input between 1-12
-console.log(getMonth(13)); // invalid input between 1-12
-
-
-console.log(getMonth("other-data")); // invalid  type:number
-console.log(getMonth(null)); // invalid  type:number
-
-
-console.log(typeof(12));
-console.log(typeof(-1));
-console.log(typeof(null));
-console.log(typeof([]));
-console.log(typeof(undefined));
-
-// switch 
+console.log("end loop");
