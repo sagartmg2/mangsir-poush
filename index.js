@@ -1,77 +1,53 @@
-/* logical operators
-    OR ||  
-        - if any one of the condition is true,
-            it gives true output 
-    AND  &&
-    NOT !
-*/
+let numbers = [1, 2];
 
-/* 
-if (student.paidStaus) {
-  console.log("he can give exam");
-} else {
-  if (student.hasScholarship) {
-    console.log("he can give exam");
-  }else{
-      console.log("he cant");
+numbers.push(3); // [1,2,3]
+numbers.push(4); // [1,2,3,4]
+
+console.log(numbers); // [1,2,3,4]
+
+function doubleTheArray(numbers) {
+  let result = [];
+
+  for (let index = 0; index < numbers.length; index++) {
+    result.push(2* numbers[index]);
   }
-}
 
-if (student.paidStaus) {
-  console.log("he can give exam");
-} else if (student.hasScholarship){
-    console.log("he can give exam");
-}else{
-    console.log("he cant");
-}
- */
-let student = {
-  name: "ram",
-  paidStaus: true,
-  hasScholarship: false,
-  fulfillAttendence: true,
-};
-
-/* object destructuring */
-let { paidStaus, hasScholarship, fulfillAttendence } = student;
-
-if ((paidStaus || hasScholarship) && fulfillAttendence) {
-  // if((false || true) && true){
-  // if(true){
-  console.log("he can give exam");
-} else {
-  console.log("he cant");
-}
-
-function sumOld(input1, input2, ...rest) {
-  console.log({ rest });
-  return input1 + input2;
+  return result;
 }
 
 
+let newArray = doubleTheArray([1, 2, 3]);
+/* EXPECTED OUTPUT */
+console.log({ newArray }); // [2,4,6]
 
-/* arrow function */
-const sum = (input1, input2, ...rest) => {
-  console.log(rest);
-  return input1 + input2;
-};
 
-const doSomehting = () => {
-  console.log("do something");
-};
+let todos = [
+    {
+        title: "variable",
+        status: "completed",
+        createAt: "2024-01-03"
+    },
+    {
+        title: "array",
+        status: "completed",
+        createAt: "2024-01-05"
+    },
+    {
+        title: "object",
+        status: "completed",
+        createAt: "2024-01-07"
+    },
+    {
+        title: "loop",
+        status: "pending",
+        createAt: "2024-01-09"
+    },
+    {
+        title: "function",
+        status: "pending",
+        createAt: "2024-01-10"
+    },
+];
 
-doSomehting()
-doSomehting()
-doSomehting()
-
-console.log(sum(1, 2, 100, 200, 300)); // 603
-
-/* 
-    console.log(sum(1,2,6)) // 3
-    console.log(sum(1,2,6,10)) // 3
-    console.log(sum(1,2,6,100,200)) // 3
-
-*/
-
-// console.log(1,2,3,4,5,6);
-
+console.log(compltedTodos); // [ ]
+console.log(pendingTodos);
