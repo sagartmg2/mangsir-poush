@@ -1,53 +1,34 @@
-let numbers = [1, 2];
+const nepaliNames = ["Aarav", "Aarya", "Aasha", "Anisha"];
 
-numbers.push(3); // [1,2,3]
-numbers.push(4); // [1,2,3,4]
 
-console.log(numbers); // [1,2,3,4]
+let dummyUsers = [];
 
-function doubleTheArray(numbers) {
-  let result = [];
-
-  for (let index = 0; index < numbers.length; index++) {
-    result.push(2* numbers[index]);
-  }
-
-  return result;
+for (let index = 0; index < nepaliNames.length; index++) {
+    let element = nepaliNames[index].toLowerCase()
+    dummyUsers.push({
+        name:element,
+        email:`${element}@gmail.com`,
+        password:`${element}${index}`
+    })
 }
 
-
-let newArray = doubleTheArray([1, 2, 3]);
-/* EXPECTED OUTPUT */
-console.log({ newArray }); // [2,4,6]
+console.log({ dummyUsers });
 
 
-let todos = [
-    {
-        title: "variable",
-        status: "completed",
-        createAt: "2024-01-03"
-    },
-    {
-        title: "array",
-        status: "completed",
-        createAt: "2024-01-05"
-    },
-    {
-        title: "object",
-        status: "completed",
-        createAt: "2024-01-07"
-    },
-    {
-        title: "loop",
-        status: "pending",
-        createAt: "2024-01-09"
-    },
-    {
-        title: "function",
-        status: "pending",
-        createAt: "2024-01-10"
-    },
-];
 
-console.log(compltedTodos); // [ ]
-console.log(pendingTodos);
+
+/* 
+
+TODO: 
+    From the above array create an new array of users with email and password 
+
+
+    OUTPUT should be like following
+    [
+        { name: 'Aarav', email: 'aarav@gmail.com', password: 'aarav0' },
+        { name: 'Aarya', email: 'aarya@gmail.com', password: 'aarya1' },
+        { name: 'Aasha', email: 'aasha@gmail.com', password: 'aasha2' },
+        { name: 'Anisha', email: 'anisha@gmail.com', password: 'anisha3' },
+    ] 
+
+*/
