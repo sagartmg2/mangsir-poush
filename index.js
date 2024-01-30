@@ -1,34 +1,55 @@
 const nepaliNames = ["Aarav", "Aarya", "Aasha", "Anisha"];
 
-
-let dummyUsers = [];
-
 for (let index = 0; index < nepaliNames.length; index++) {
-    let element = nepaliNames[index].toLowerCase()
-    dummyUsers.push({
-        name:element,
-        email:`${element}@gmail.com`,
-        password:`${element}${index}`
-    })
+  const element = nepaliNames[index];
+  console.log(`${element} - ${index}`);
 }
 
-console.log({ dummyUsers });
+const doSomething = () => {
+  console.log("do somehting");
+};
+
+const printElement = (element, index) => {
+  console.log("element:", element, index);
+};
+
+nepaliNames.forEach(printElement);
+
+let numbers = [1, 2, 3, 4, 5];
+
+let finalSum = 0;
+numbers.forEach((el, idx) => {
+  console.log("element", el, "index:", idx);
+  finalSum += el;
+});
+console.log({ finalSum });
 
 
+let todos = [
+  {
+    title: "html",
+    status: true,
+  },
+  {
+    title: "js",
+    status: false,
+  },
+  {
+    title: "react",
+    status: false,
+  },
+];
 
+// using forEach function of an array 
+
+/* html is completed */
+/* js is pending */
+/* react is pending */
 
 /* 
-
-TODO: 
-    From the above array create an new array of users with email and password 
-
-
-    OUTPUT should be like following
-    [
-        { name: 'Aarav', email: 'aarav@gmail.com', password: 'aarav0' },
-        { name: 'Aarya', email: 'aarya@gmail.com', password: 'aarya1' },
-        { name: 'Aasha', email: 'aasha@gmail.com', password: 'aasha2' },
-        { name: 'Anisha', email: 'anisha@gmail.com', password: 'anisha3' },
-    ] 
-
+    array functions
+        - forEach
+        - map
+        - filter
+        - find
 */
