@@ -1,64 +1,48 @@
-/* for loop */
-/* forEach */
-/* map */
-/* filter */
-/* find */ // findcountry code
-/* reduce */
+/* synchronous  */
 
-let numbers = [1, 2, 3, 4];
-let doubledNumbers = [];
+console.log(1);
+console.log(2);
+console.log(3);
 
-// for(let index = 0 ;index<numbers.length;index++){
-//     doubledNumbers.push(numbers[index]*2)
-// }
+const sum = (input1, input2) => input1 + input2;
 
-let result = numbers.forEach((element) => {
-  doubledNumbers.push(element * 2);
-});
-console.log(result); // undefined
-console.log(doubledNumbers); // [2,4,6,8]
-
-/* map function
-    - returns new array of exact length of our original array
+/* asynchronous
+      - donot block other codes
+      - runs in background. 
 */
 
-let tripleNumbers = numbers.map((element) => {
-  return element * 3;
-});
+setTimeout(() =>{
+  console.log("api data..");
+},2000)
 
-console.log(tripleNumbers);
 
-const nepaliNames = ["Aarav", "Aarya", "Aasha", "Anisha"];
-/* create fake database.  */
-let dummyDatas = [];
+/* exception/error handeling  try catch */
 
-// for (let index = 0; index < nepaliNames.length; index++) {
-//     let element = nepaliNames[index].toLowerCase();
-//     dummyDatas.push({
-//         name: element,
-//         email:element+"@gmail.com",
-//         password:element+index,
-//     })
-// }
+try{
+  let a = b + c;
+}catch(err){
+  console.log(err);
+}
 
-// nepaliNames.forEach((element,index) => {
-//   dummyDatas.push({
-//     name: element,
-//     email: element + "@gmail.com",
-//     password: element + index,
-//   });
-// });
 
-dummyDatas = nepaliNames.map((element, index) => {
-  return {
-    name: element,
-    email: element + "@gmail.com",
-    password: element + index,
-  };
-});
+/* promise */
+let promise1  = new Promise((resolve,reject) =>{
+  setTimeout(() =>{
+    // resolve({name:"ram",email:"r@gmail.com",token:"AFSDF@#$@!#DASDF"})
+    reject("server error")
+  },2000)
+})
 
-console.log(dummyDatas);
 
-let wholeNumbers = [1, 2, 3, 4, 5, 6, 7, 8];
-console.log(evenNumbers); // [2,4,6,8] // using filter method
-console.log(oddNumber); [1,3,5,7,9] // using filter method
+console.log(promise1);
+promise1.then((response) =>{
+  console.log("response",response);
+}).catch(err =>{
+  console.log("err",err);
+})
+
+
+console.log(sum(10,20));
+
+
+
