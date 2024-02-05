@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <form onsubmit="createTodo(event)">
+      <input id="title" required type="text" />
+      <button>submit</button>
+    </form>
+
+    <ul id="todos-list">
+      <li>html</li>
+      <li>css</li>
+    </ul>
+
+    <script>
+      function createTodo(e) {
+        e.preventDefault();
+        axios
+          .post("https://todo-api-dom.vercel.app/api/todos/", {
+            title: document.getElementById("title").value,
+          })
+          .then((res) => {
+            fetchTodos()
+          });
+      }
+
+      function fetchTodos() {
+        axios
+          .get("https://todo-api-dom.vercel.app/api/todos/")
+          .then((res) => {
+            console.log(res.data.data); //[{title:html},{title:css},]
+
+            let output = "";
+            res.data.data.forEach((el) => {
+              output += `<li> ${el.title} </li>`;
+            });
+
+            document.getElementById("todos-list").innerHTML = output;
+          })
+          .catch((err) => {
+            document.getElementById("todos-list").innerHTML =
+              "Please try again later";
+          });
+      }
+      fetchTodos()
+    </script>
+  </body>
+</html>

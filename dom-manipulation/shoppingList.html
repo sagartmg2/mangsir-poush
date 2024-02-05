@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <form onsubmit="addItem(event)">
+        <input type="text" placeholder="title">
+        <input type="number" placeholder="quanity">
+        <button>submit</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quanity</th>
+            </tr>
+        </thead>
+        <tbody id="items-list">
+            <!-- <tr>
+                <td>Apple</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Apple</td>
+                <td>10</td>
+            </tr> -->
+        </tbody>
+    </table>
+    <script>
+
+        let items = []
+
+        function addItem(e){
+            e.preventDefault()
+            items.push({
+                name:"apple",
+                quanity:10
+            })
+            let output = ''
+            items.forEach(el =>{
+                
+            })
+            output = `<tr>
+                    <td>apple</td>
+                    <td>quanity</td>
+                <tr/>`
+            document.getElementById("items-list").innerHTML =  output
+            
+        }
+
+    </script>
+    
+</body>
+</html>
