@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+      .tag{
+        border: 1px solid;
+        border-radius: 10px;
+        padding: .5px 1px;
+      }
+    </style>
   </head>
   <body>
     <form onsubmit="createTodo(event)">
@@ -18,6 +25,7 @@
     </ul>
 
     <script>
+      let todos =  []
       function createTodo(e) {
         e.preventDefault();
         axios
@@ -34,10 +42,10 @@
           .get("https://todo-api-dom.vercel.app/api/todos/")
           .then((res) => {
             console.log(res.data.data); //[{title:html},{title:css},]
-
+            todos = res.data.data
             let output = "";
-            res.data.data.forEach((el) => {
-              output += `<li> ${el.title} </li>`;
+            todos.forEach((el) => {
+              output += `<li> ${el.title} <span onclick="toggleStatus('${el._id}')" class="tag">${el.status}</span> </li> `;
             });
 
             document.getElementById("todos-list").innerHTML = output;
@@ -48,6 +56,15 @@
           });
       }
       fetchTodos()
+
+      function toggleStatus(_id){
+        console.log("todo_id",_id)
+        axios.put("https://todo-api-dom.vercel.app/api/todos/"+_id,{
+          status: ! todos.find(el => el._id == _id).status
+        }).then(res =>{
+          fetchTodos()
+        })
+      }
     </script>
   </body>
 </html>
