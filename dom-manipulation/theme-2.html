@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .dark {
+        background-color: #333;
+        color: whitesmoke;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body id="body" class="">
+    <button id="dark-btn" class="" onclick="toggleTheme()">dark</button>
+    <button id="light-btn" class="hidden" onclick="toggleTheme()">light</button>
+
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, adipisci?
+      Reiciendis voluptatum quo earum ratione voluptate, minima perspiciatis
+      quam deserunt nemo harum magnam quidem possimus repellendus dignissimos
+      dolorem natus eius.
+    </p>
+
+    <script>
+      function toggleTheme() {
+        document.getElementById("body").classList.toggle("dark");
+        document.getElementById("dark-btn").classList.toggle("hidden");
+        document.getElementById("light-btn").classList.toggle("hidden");
+      }
+    </script>
+  </body>
+</html>

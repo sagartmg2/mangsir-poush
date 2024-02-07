@@ -9,13 +9,16 @@
             background-color: #333;
             color:whitesmoke
         }
+        .hidden{
+          display: none;
+        }
     </style>
 
   </head>
   <body id="body" class="">
 
-    <button onclick="toDarkMode()">dark</button>
-    <button onclick="toLightMode()">light</button>
+    <button id="dark-btn" class="" onclick="toDarkMode()">dark</button>
+    <button id="light-btn" onclick="toLightMode()" class="hidden">light</button>
 
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, adipisci?
@@ -27,9 +30,13 @@
     <script>
         function toDarkMode(){
             document.getElementById("body").classList.add("dark")
+            document.getElementById("dark-btn").classList.toggle("hidden")
+            document.getElementById("light-btn").classList.toggle("hidden")
         }
         function toLightMode(){
             document.getElementById("body").classList.remove("dark")
+            document.getElementById("dark-btn").classList.toggle("hidden")
+            document.getElementById("light-btn").classList.toggle("hidden")
         }
     </script>
   </body>

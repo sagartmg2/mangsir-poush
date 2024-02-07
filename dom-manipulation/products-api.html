@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+        .flex {
+            display: flex;
+        }
+        .flex-wrap{
+            flex-wrap: wrap;
+        }
+        img{
+           width: 200px ;
+        }
+    </style>
+</head>
+<body>
+    <h1>products</h1>
+    <code>show the list of proudcts here using the api ( https://dummyjson.com/products )</code>
+    <p>eg:</p>
+    <ul id="products-list" class="flex flex-wrap">
+        <!-- <li>product-1
+            <img src="https://cdn.dummyjson.com/product-images/1/thumbnail.jpg"/>
+        </li>
+        <li>product-2</li>
+        <li>product-3</li> -->
+    </ul>
+
+    <script>
+        let products = []
+        axios.get("https://dummyjson.com/products")
+        .then(res =>{
+            console.log(res.data.products)
+            products = res.data.products
+            let output = ""
+            products.forEach((product) =>{
+                output+= `
+                    <li>${product.title} </li>
+                    <img src="${product.thumbnail}"/>
+                `
+            })
+            document.getElementById("products-list").innerHTML = output
+        })
+        
+    </script>
+    
+</body>
+</html>
